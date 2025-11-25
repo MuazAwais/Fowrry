@@ -3,10 +3,10 @@ import Navbar from "./navbar";
 
 const Header = () => {
   return (
-    <div>
+    <div className="">
       <div className="bg-primary">
-      <div className="container py-2 min-h-[50px] text-light flex justify-center sm:justify-between flex-wrap gap-y-2 items-center ">
-        <div className="md:font-bold font-semibold">Welcome to Fowrry</div>
+      <div className="container py-2 min-h-[50px] text-light flex justify-between flex-wrap gap-y-2 items-center text-[14px]">
+        <div className="md:font-bold font-medium">Welcome to Fowrry</div>
         <div className="flex gap-x-2">
           <div className="w-[22px] flex items-center">
             <img
