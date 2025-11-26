@@ -3,6 +3,9 @@ import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import favicon from "../../assets/logo-home.svg";
 import Layout from "@/components/layout";
+import "@radix-ui/themes/styles.css";
+import { Theme } from "@radix-ui/themes";
+
 
 
 const openSans = Open_Sans({
@@ -26,9 +29,11 @@ export default function RootLayout({
         <link rel="icon" href={favicon.src} type="image/svg+xml" />
       </head>
       <body>
+        <Theme>
         <Layout>
          {children}
         </Layout>
+        </Theme>
       </body>
     </html>
   );

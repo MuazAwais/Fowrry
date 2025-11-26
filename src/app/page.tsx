@@ -1,9 +1,9 @@
-
+import HomeView from "./views/home/index"
 
 const Home = () => {
   return (
-    <div className="container">
-      HOME
+    <div className="">
+      <HomeView />
     </div>
   )
 }

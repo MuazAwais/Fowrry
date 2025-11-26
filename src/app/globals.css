@@ -3,6 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
     :root {
         --color-primary: #F05A2C;
@@ -15,3 +16,34 @@
         --color-dark: #343a40;
     }
 }
+
+.tab-shape {
+    --bg: #e4e4e4;
+    --active-bg: #ffffff;
+    --text: #333;
+    --active-text: #e6543e;
+    --slant: 18px; /* angle size */
+  
+    padding: 6px 35px;
+    background: var(--bg);
+    color: var(--text);
+    font-weight: 600;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    border-left: 5px solid #333;
+    clip-path: polygon(0 0, 75% 0, 93% 86%, 95% 93%, 100% 100%, 25% 100%, 21% 96%, 18% 89%);
+    transition: 0.2s;
+  }
+  
+  /* Active */
+  .tab-shape.active {
+    background: var(--active-bg);
+    color: var(--active-text);
+  }
+  
+  /* Hover */
+  .tab-shape:hover {
+    background: #d8d8d8;
+  }
+  
