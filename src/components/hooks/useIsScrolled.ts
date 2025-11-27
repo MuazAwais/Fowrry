@@ -1,22 +1,32 @@
 // src/components/hooks/useIsScrolled.ts
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
-export function useIsScrolled(threshold = 0) {
+export function useIsScrolled(threshold = 100) {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    const onScroll = () => {
-      setIsScrolled(window.scrollY > threshold);
+    const checkScroll = () => {
+      const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+      if ((scrollY > threshold) !== isScrolled) {
+  setIsScrolled(scrollY > threshold);
+}
+
     };
 
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
+    // Check initial scroll position
+    checkScroll();
 
-    return () => window.removeEventListener("scroll", onScroll);
+    // Add scroll event listener
+    window.addEventListener("scroll", checkScroll, { passive: true });
+
+    // Cleanup
+    return () => {
+      window.removeEventListener("scroll", checkScroll);
+    };
   }, [threshold]);
 
   return isScrolled;

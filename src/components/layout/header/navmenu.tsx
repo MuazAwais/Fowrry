@@ -28,15 +28,15 @@ const Navmenu = () => {
   };
 
   return (
-    <div>
+    <div className="">
       <div className="" onClick={toggleMenu}>
         <FiMenu size={30} />
       </div>
-      <div className={`absolute z-[999999999] top-0 -left-1 bg-light w-full px-6 flex flex-col gap-y-3 transition-all duration-300 ease-in-out  ${isOpen ? "translate-x-0" : "-translate-x-[100vw]"}`}>
-        <div className="flex w-full justify-end mt-2" onClick={toggleMenu}><AiFillCloseCircle /></div>
-        <ul className="flex flex-col gap-y-3 ">
+      <div className={`h-[100vh] absolute z-[999999999] top-0 -left-1 bg-light w-full px-6 flex flex-col gap-y-3 transition-all duration-300 ease-in-out  ${isOpen ? "translate-x-0" : "-translate-x-[100vw]"}`}>
+        <div className=" flex w-full justify-end mt-2" onClick={toggleMenu}><AiFillCloseCircle /></div>
+        <ul className="flex flex-col gap-y-5 ">
           {navLinks.map((link, index) => (
-            <li key={index} className="font-medium hover:cursor-pointer hover:font-semibold">
+            <li key={index} className="font-medium pb-2 hover:cursor-pointer hover:font-semibold">
               <Link href={link.href}>{link.label}</Link>
               <Separator color="orange" size="4" />
             </li>

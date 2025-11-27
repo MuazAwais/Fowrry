@@ -9,7 +9,7 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
     container: {
       center: true,
       padding: '1rem',
@@ -27,6 +27,7 @@ module.exports = {
       'light': '#f8f9fa',
       'dark': '#343a40'
     }
+  },
   },
   plugins: [],
 }

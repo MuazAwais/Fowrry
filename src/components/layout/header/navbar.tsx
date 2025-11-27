@@ -11,11 +11,11 @@ import { MdTrackChanges } from "react-icons/md";
 import { IoPersonOutline } from "react-icons/io5";
 
 const Navbar = () => {
-  const isScrolled = useIsScrolled(20);
+  const isScrolled = useIsScrolled(50);
   // const [activeTab, setActiveTab] = useState('Home');
 
   return (
-    <div className={`bg-[#ebeaea] ${isScrolled ? " fixed top-0 w-full" : ""}`}>
+    <div className={`bg-[#ebeaea] ${isScrolled ? "fixed top-0 w-full" : ""}`}>
       <div className="sm:hidden py-[10px] container flex justify-between items-center">
         <div className="">
           <Navmenu />
