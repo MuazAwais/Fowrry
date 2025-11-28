@@ -5,6 +5,7 @@ import favicon from "../../assets/logo-home.svg";
 import Layout from "@/components/layout";
 import "@radix-ui/themes/styles.css";
 import { Theme } from "@radix-ui/themes";
+import { CartProviderWrapper } from "@/components/providers/CartProviderWrapper";
 
 
 
@@ -30,9 +31,11 @@ export default function RootLayout({
       </head>
       <body>
         <Theme>
-        <Layout>
-         {children}
-        </Layout>
+          <CartProviderWrapper>
+            <Layout>
+              {children}
+            </Layout>
+          </CartProviderWrapper>
         </Theme>
       </body>
     </html>

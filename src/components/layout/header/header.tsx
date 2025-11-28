@@ -1,17 +1,16 @@
-
+"use client";
 import Navbar from "./navbar";
 import WelcomeBar from "./welcomeBar";
 
 const Header = () => {
-
   return (
-    <div className="">
+    <header className="relative z-[999]">
       <WelcomeBar />
-      <nav className={``}>
-      <Navbar />
+      <nav>
+        <Navbar />
       </nav>
-    </div>
+    </header>
   );
 };
 
-export default Header;
+export default Header;;

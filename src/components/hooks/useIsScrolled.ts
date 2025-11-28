@@ -5,16 +5,15 @@ import { useEffect, useState } from "react";
 
 export function useIsScrolled(threshold = 100) {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
     if (typeof window === "undefined") return;
 
     const checkScroll = () => {
       const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
-      if ((scrollY > threshold) !== isScrolled) {
-  setIsScrolled(scrollY > threshold);
-}
-
+      setIsScrolled(scrollY > threshold);
     };
 
     // Check initial scroll position
@@ -29,7 +28,8 @@ export function useIsScrolled(threshold = 100) {
     };
   }, [threshold]);
 
-  return isScrolled;
+  // Return false during SSR to prevent hydration mismatch
+  return isMounted ? isScrolled : false;
 }
 
 export default useIsScrolled;
