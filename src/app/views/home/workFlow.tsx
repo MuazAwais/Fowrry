@@ -35,8 +35,8 @@ const WorkFlow = () => {
               fill="none"
               stroke="currentColor"
               strokeWidth="1"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               className="lucide lucide-package-check-icon lucide-package-check"
             >
               <path d="m16 16 2 2 4-4" />

@@ -12,6 +12,13 @@
   - `postcss.config.js` standard.
   - `tsconfig.json`: base paths (`@/*` → `./src`).
   - `.env.local`: base URL for fake API, map API key placeholder.
+  ```env
+  NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here
+  ```
+  **Note**: To use the location picker feature, you need to:
+  1. Get a Google Maps API key from [Google Cloud Console](https://console.cloud.google.com/google/maps-apis)
+  2. Enable "Places API" and "Maps JavaScript API" for your project
+  3. Add the API key to `.env.local` as shown above
 
 ### Folder Structure
 ```

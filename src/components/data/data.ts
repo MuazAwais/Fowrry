@@ -1,5 +1,4 @@
-
-interface Product {
+export interface Product {
     id: number;
     title: string;
     description: string;
@@ -8,7 +7,7 @@ interface Product {
     offer: number;
     image: string;
   }
-  interface Shop {
+export interface Shop {
     id: number;
     name: string;
     category: string;
@@ -22,7 +21,7 @@ interface Product {
     products: Product[];
   }
 
-const SHOPS_DATA = [
+export const SHOPS_DATA: Shop[] = [
     {
       id: 1,
       name: "TechHub Electronics",
